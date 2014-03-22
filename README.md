@@ -47,14 +47,14 @@ BTC,00,80,secp256k1|LTC,30,B0,secp256k1
 
 will configure 2 coins:
 BTC 
-public key version number = 0x00
-private key version number = 0x80
-EC curve = secp256k1
+- public key version number = 0x00
+- private key version number = 0x80
+- EC curve = secp256k1
 
 LTC
-public key version number = 0x30
-private key version number = 0xB0
-EC curve = secp256k1
+- public key version number = 0x30
+- private key version number = 0xB0
+- EC curve = secp256k1
 
 Important note:
 the addresses generated follow the bitcoin algorithm.

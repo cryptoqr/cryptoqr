@@ -17,7 +17,7 @@ Then you have the following options
 The pattern follows regular expressions (see http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html).
 for example the pattern.
 .\*BTC.\* will generate an address containing the characters BTC somewhere in the address and
-5BTC.\* will generate an address starting with 5BTC .
+1BTC.\* will generate an address starting with 1BTC .
 
 After generating addresses, you can click the "Print Last Generated" button which
 will print directly to the printer the last generated address(es). 

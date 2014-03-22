@@ -91,9 +91,10 @@ public class AddressGeneratorQueueProcessor extends AbstractQueueProcessor<Gener
 				logger.error("Do not adding coin:"+coinName+" cannot recognise curve:"+curveName);
 			} else{ 
 				suppCoins.add(new CryptoCoin(privkVer, pubkVer, coinName, curveName));
-				keyGenerators.put(curveName, new CryptoCoinECKeyGenerator(curveName));
+				if (!keyGenerators.containsKey(curveName)) {
+					keyGenerators.put(curveName, new CryptoCoinECKeyGenerator(curveName));
+				}
 			}
-
 		}
 		
 	}

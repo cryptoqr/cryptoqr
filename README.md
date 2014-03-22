@@ -7,6 +7,8 @@ CryptoQR Application.
 - print the wallet addresses in QR format
 - decode printed QR images via a webcam
 
+Download: https://github.com/cryptoqr/cryptoqr/releases
+
 Using the software
 ==================
 Initially you select the webcam to be used for decoding QR codes.

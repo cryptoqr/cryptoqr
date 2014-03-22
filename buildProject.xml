@@ -6,7 +6,6 @@
 	<property name="src.dir" location="src" />
 	<property name="build.dir" location="build" />
 	<property name="dist.dir" location="dist" />
-	<property name="docs.dir" location="docs/javadoc" />
 	<property name="lib.dir" location="ext_lib" />
 		
 	<path id="build.classpath">
@@ -38,25 +37,14 @@
 		</javac>
 	</target>
 
-	<!-- Creates Javadoc -->
-	<target name="docs" depends="compile">
-		<javadoc packagenames="src" sourcepath="${src.dir}" destdir="${docs.dir}">
-			<!-- Define which files / directory should get included, we include all -->
-			<fileset dir="${src.dir}">
-				<include name="**" />
-			</fileset>
-		</javadoc>
-	</target>
-
 	<!--Creates the deployable jar file -->
 	<target name="jar" depends="compile">
 		<jar destfile="${dist.dir}\cryptoqr-1.0.1.jar" basedir="${build.dir}" />
 	</target>
 
 	<!--Creates the runtime distribution  -->
-	<target name="zip" depends="jar, docs">
+	<target name="zip" depends="jar">
 		  <zip destfile="${dist.dir}\cryptoqr-1.0.1.zip">
-		    <zipfileset dir="." includes="docs/**" prefix="."/>
 		    <zipfileset dir="." includes="resources/**" prefix="."/>
 		  	<zipfileset dir="." includes="ext_lib/**"  prefix="."/>
 		  	<zipfileset dir="." includes="LICENSE" prefix="."/>
@@ -67,7 +55,7 @@
 		  </zip>	
 	</target>
 
-	<target name="main" depends="compile, docs, jar, zip">
+	<target name="main" depends="compile, jar, zip">
 		<description>Main target</description>
 	</target>
 

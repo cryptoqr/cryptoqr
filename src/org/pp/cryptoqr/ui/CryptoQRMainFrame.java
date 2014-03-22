@@ -100,10 +100,12 @@ public class CryptoQRMainFrame extends JFrame implements LogEventRetriever{
 		if (selectedWebcam != null) {
 			Dimension size = WebcamResolution.QVGA.getSize();
 			selectedWebcam.setViewSize(size);
+			
+			webcamPanel = new WebcamPanel(selectedWebcam);
+			webcamPanel.setBounds(10, 11, 320, 240);
+			contentPane.add(webcamPanel);
 		}
-		webcamPanel = new WebcamPanel(selectedWebcam);
-		webcamPanel.setBounds(10, 11, 320, 240);
-		contentPane.add(webcamPanel);
+
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 293, 572, 137);
